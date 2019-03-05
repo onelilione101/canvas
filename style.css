@@ -14,7 +14,7 @@
  }
   
 body{
-  position: fixed;
+  overflow: hidden;
 }
   
   html{
