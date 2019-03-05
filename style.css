@@ -1,0 +1,65 @@
+#xxx{
+    background: #ddd;
+    display: block;
+  }
+  *{list-style: none;padding:0;margin:0;}
+  .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+  
+
+  
+  html{
+  }
+  
+  .actions{
+    position: fixed;
+    top: 0.5em;
+    left: 0.5em;
+    padding: 0.5em;
+  }
+
+  .actions svg{
+    width: 2em;
+    height: 2em;
+    transition: all 0.3s;
+    margin: 0 0.5em;
+
+  }
+  
+  
+  .actions svg.active{
+    fill:yellowgreen;
+    transform: scale(1.5);
+    
+  }
+  .colors{
+    position: fixed;
+    left:1em;
+    top:4em;
+    
+  }
+  .colors > li{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em 0;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  .colors > li.orange{
+    background: orange;
+  }
+  .colors > li.skyblue{
+    background: skyblue;
+  }
+  .colors > li.yellow{
+    background: yellow;
+  }
+  .colors > li.active{
+    transform: scale(1.2);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2)
+
+  }
