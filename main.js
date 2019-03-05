@@ -1,5 +1,7 @@
 var canvas = document.getElementById('xxx');
 var context = canvas.getContext('2d');
+var lineWidth = 5;
+
 
   autoSetCanvasSize(canvas)
 
@@ -17,26 +19,55 @@ var context = canvas.getContext('2d');
     eraser.classList.add('active')
     pen.classList.remove('active')
   }
+  black.onclick = function () {
+    context.strokeStyle = 'black'  
+    black.classList.add('active')
+    orange.classList.remove('active')
+    skyblue.classList.remove('active')
+    yellow.classList.remove('active')
+}
   orange.onclick = function () {
       context.strokeStyle = 'orange'  //为啥不是fill 而是stroke
       orange.classList.add('active')
       skyblue.classList.remove('active')
       yellow.classList.remove('active')
+      black.classList.remove('active')
   }
   skyblue.onclick = function () {
     context.strokeStyle = 'skyblue'  
     skyblue.classList.add('active')
     orange.classList.remove('active')
     yellow.classList.remove('active')
+    black.classList.remove('active')
   }
   yellow.onclick = function () {
     context.strokeStyle = 'yellow' 
     yellow.classList.add('active')
     orange.classList.remove('active')
     skyblue.classList.remove('active') 
+    black.classList.remove('active')
 }
 
+ thin.onclick = function () {
+    lineWidth = 5     
+ }
+ thick.onclick = function () {
+    lineWidth = 10     
+ }
 
+ clear.onclick = function () {
+    context.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+download.onclick = function () {
+    var url = canvas.toDataURL("image/png")
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = '我的图画'
+    a.target = '_blank'
+    a.click()
+}
   /******/
 
   function autoSetCanvasSize(canvas) {
@@ -66,7 +97,7 @@ var context = canvas.getContext('2d');
       context.beginPath();
       
       context.moveTo(x1, y1) // 起点
-      context.lineWidth = 5
+      context.lineWidth = lineWidth
       context.lineTo(x2, y2) // 终点
       context.stroke()
       context.closePath()
