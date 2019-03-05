@@ -13,15 +13,10 @@
     overflow: hidden;
  }
   
-body{
+  body{
   overflow: hidden;
   position: fixed;
-}
- .help{
-  display:fixed;
-  left:0;
-  top:0;
- } 
+  }
 
   .actions{
     position: fixed;
