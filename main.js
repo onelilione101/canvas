@@ -1,4 +1,4 @@
-document.body.ontouchmove = function (eee) {
+document.body.ontouchstart = function (eee) {
     eee.preventDefault()
     
 }
