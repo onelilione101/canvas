@@ -1,3 +1,7 @@
+document.body.ontouchmove = function (eee) {
+    eee.preventDefault()
+    
+}
 var canvas = document.getElementById('xxx');
 var context = canvas.getContext('2d');
 var lineWidth = 5;
