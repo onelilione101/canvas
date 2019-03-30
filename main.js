@@ -1,6 +1,6 @@
-document.body.ontouchstart = function (eee) {
+document.body.ontouchmove = function (eee) { 
     eee.preventDefault()
-    
+    //还得是move，start不行，start会被误认为是onmousedown,导致电脑上不能用
 }
 var canvas = document.getElementById('xxx');
 var context = canvas.getContext('2d');
@@ -31,7 +31,7 @@ var lineWidth = 5;
     yellow.classList.remove('active')
 }
   orange.onclick = function () {
-      context.strokeStyle = 'orange'  //为啥不是fill 而是stroke
+      context.strokeStyle = 'orange'  
       orange.classList.add('active')
       skyblue.classList.remove('active')
       yellow.classList.remove('active')
@@ -192,3 +192,6 @@ download.onclick = function () {
       }
     }
   }
+
+ 
+ 
